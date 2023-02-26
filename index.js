@@ -1,6 +1,5 @@
 //take in the user's choice
-
-let userChoice = prompt("Rock, paper, or scissors?", "Rock");
+let userChoice = prompt("Rock, Paper, or Scissors?", "Rock");
 
 //ensure users choice is not case sensitive (i.e. rock or Rock or rOck is accepted)
 function userChoiceCapitalize (userChoice)
@@ -8,8 +7,9 @@ function userChoiceCapitalize (userChoice)
     return userChoice.charAt(0).toUpperCase() + userChoice.slice(1).toLowerCase();
 }
 
-//print user choice (check)
-console.log(userChoiceCapitalize(userChoice));
+//print userChoice (check)
+userChoice = userChoiceCapitalize(userChoice);
+console.log(userChoice);
 
 //randomly generate the computer's choice
 
@@ -37,13 +37,43 @@ console.log(userChoiceCapitalize(userChoice));
             }
         }
     //We need to print out the getComputerChoice() function
-    console.log(getComputerChoice());
+    
+    computerChoice = (getComputerChoice());
+    console.log(computerChoice);
     
 
 //set out rules: rock beats scissors, scissors beats paper, paper beats rock
-
 //test result based on player choice and computer's choice
 
 //return result
+function playRound (userChoice, computerChoice)
+{
+    if (userChoice === "Paper" && computerChoice === "Rock")
+    {
+        return("Paper beats rock, you won!");
+    } else if (userChoice === "Paper" && computerChoice === "Scissors")
+    {
+        return("Scissors beats paper, you lost!");
+    } else if (userChoice === "Scissors" && computerChoice === "Rock")
+    {
+        return("Rock beats scissors, you lost!");
+    } else if (userChoice === "Scissors" && computerChoice === "Paper")
+    {
+        return("Scissors beats paper, you won!");
+    } else if (userChoice === "Rock" && computerChoice === "Paper")
+    {
+        return("Paper beats rock, you lost!");
+    } else if (userChoice === "Rock" && computerChoice === "Scissors")
+    {
+        return("Rock beats scissors, you won!");
+    } else 
+    {
+        return("You tied!");
+    }
+}
 
-//return result via the console.
+console.log(playRound(userChoice, computerChoice));
+
+
+
+
