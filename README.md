@@ -8,3 +8,5 @@ Part of The Odin Project Foundations course. Create a game of "rock, paper, scis
 26.02.23 (22:30) - Added play round function. Cleaned up code created early to ensure the round works (redefining variables so not using functions as parameters).
 
 26.02.23 (23:54) - Added loop to play 5 times.
+
+27.02.23 (19:06) - Added a function to keep score of player and computer. Added function to return final result. Project now complete.

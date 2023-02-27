@@ -1,6 +1,11 @@
+let userScore = 1;
+let computerScore = 1;
+
 //Create a function to play the game in 5 rounds
 function game(numOfRounds)
 {
+    
+    
     numOfRounds = numOfRounds || 0;
     let i;
     for(i = 1; i < numOfRounds; i++)
@@ -50,55 +55,57 @@ function game(numOfRounds)
             console.log(computerChoice);
             
 
+            
         //set out rules: rock beats scissors, scissors beats paper, paper beats rock
         //test result based on player choice and computer's choice
-
-        function playRound (userChoice, computerChoice)
+        function playRound ()
         {
             if (userChoice === "Paper" && computerChoice === "Rock")
             {
-                return("Paper beats rock, you won!");
+                return("Paper beats rock, you won! Your score is " + (userScore++));
             } else if (userChoice === "Paper" && computerChoice === "Scissors")
             {
-                return("Scissors beats paper, you lost!");
+                return("Scissors beats paper, you lost! The computer's score is " + (computerScore++));
             } else if (userChoice === "Scissors" && computerChoice === "Rock")
             {
-                return("Rock beats scissors, you lost!");
+                return("Rock beats scissors, you lost! The computer's score is " + (computerScore++));
             } else if (userChoice === "Scissors" && computerChoice === "Paper")
             {
-                return("Scissors beats paper, you won!");
+                return("Scissors beats paper, you won! Your score is " + (userScore++));
             } else if (userChoice === "Rock" && computerChoice === "Paper")
             {
-                return("Paper beats rock, you lost!");
+                return("Paper beats rock, you lost! The computer's score is " + (computerScore++));
             } else if (userChoice === "Rock" && computerChoice === "Scissors")
             {
-                return("Rock beats scissors, you won!");
+                return("Rock beats scissors, you won! Your score is " + (userScore++));
             } else 
             {
                 return("You tied!");
             }
         }
-
-        //return result
-        console.log(playRound(userChoice, computerChoice));  
-
-        //return number of rounds played
-        function roundNumber(i)
-        {
-            if (i === 1)
-            {
-                return("You've played 1 time!");
-            } else 
-            {
-                return("You've played " + i + " times!");
-            }
-        }
-
-        console.log(roundNumber(i));
         
+        //return result
+        console.log(playRound());  
     }
-    
 }
 
-//Call function (inserting no of round (-1))
-game(6);
+//Call function to initialize game
+game(11);
+
+//calculate final result
+function finalResult()
+{
+    if(userScore > computerScore)
+    {
+        return("You scored a total of " + (userScore - 1) + ", whilst the computer scored a total of " + (computerScore - 1) + ". Well done - you won!");
+    } else if (userScore < computerScore)
+    {
+        return("You scored a total of " + (userScore - 1) + ", whilst the computer scored a total of " + (computerScore - 1) + ". Better luck next time!");
+    } else 
+    {
+        return("You scored a total of " + (userScore - 1) + ", whilst the computer scored a total of " + (computerScore - 1) + ". You tied! Care to refresh and try again?")
+    }
+}
+
+//Return final result and verdict
+console.log(finalResult());
