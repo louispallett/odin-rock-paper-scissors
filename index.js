@@ -90,7 +90,7 @@ function game(numOfRounds)
 }
 
 //Call function to initialize game
-game(11);
+game();
 
 //calculate final result
 function finalResult()
@@ -109,3 +109,4 @@ function finalResult()
 
 //Return final result and verdict
 console.log(finalResult());
+

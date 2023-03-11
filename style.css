@@ -1,0 +1,105 @@
+@import url('https://fonts.cdnfonts.com/css/rock-font');
+*
+{
+    /*border: 1px solid red;*/
+    margin: 0px;
+}
+
+html, body
+{
+    height: 100%;
+}
+
+.header
+{
+    display: flex;
+    justify-content: center;
+    height: 15%;
+    background-color: black;
+    color: white;
+    border-bottom: 3px solid black;
+}
+
+.header-inner
+{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 20px;
+    width: 80%;
+    font-family: 'RockFont', sans-serif;
+    font-size: 50px;
+    flex: 1;
+    gap: 20px;
+}   
+
+/*.comp-choice-body
+{
+    display: flex;
+    justify-content: flex-start;
+    padding: 25px;
+    border-bottom: 3px solid white;
+}
+
+.comp-choice-text
+{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 24px;
+}*/
+
+.main-body
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40%;
+    border-top: 3px solid white;
+    border-bottom: 3px solid black;
+    background-color: #0A23AA;
+}
+
+.main-body-inner
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+    width: 70%;
+}
+
+.userButton
+{
+    padding: 20px;
+    height: 60px;
+    width: 60px;
+    background-color: white;
+    border: 5px solid black;
+    border-radius: 20%;
+}
+
+.scores-outer
+{
+    display: flex;
+    height: 30%;
+    border-top: 3px solid white
+}
+
+.scores-inner
+{
+    display: flex;
+}
+
+.footer
+{
+    display: flex;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+    height: 5%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color: white;
+    background-color: black;
+}
