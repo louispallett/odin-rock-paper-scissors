@@ -20,7 +20,6 @@ scissorsButton.addEventListener('click', (e) => {
     console.log(playRound(e.target.id, computerChoice));
 })
 
-
 //Create a function to play the game in 5 rounds
     let computerChoice = ["Rock", "Paper", "Scissors"];
 
@@ -61,30 +60,41 @@ function finalResult()
 //test result based on player choice and computer's choice
 function playRound (userChoice, computerChoice)
 {
+    //Score DOM variables
+    const resultContainer = document.querySelector(".scores-inner");
+    const roundResult = document.createElement("div");
+
     computerChoice = (getComputerChoice());
     if (userScore < 6 && computerScore < 6)
     {
         if (userChoice === "Paper" && computerChoice === "Rock")
         {
-            return("Paper beats rock, you won! Your score is " + (userScore++));
+            roundResult.textContent = `You chose: ${userChoice}, the computer chose: ${computerChoice}. Paper beats rock, you won! Your score is ` + (userScore++);
+            resultContainer.appendChild(roundResult);
         } else if (userChoice === "Paper" && computerChoice === "Scissors")
         {
-            return("Scissors beats paper, you lost! The computer's score is " + (computerScore++));
+            roundResult.textContent = `You chose: ${userChoice}, the computer chose: ${computerChoice}. Scissors beats paper, you lost! The computer's score is ` + (computerScore++);
+            resultContainer.appendChild(roundResult);
         } else if (userChoice === "Scissors" && computerChoice === "Rock")
         {
-            return("Rock beats scissors, you lost! The computer's score is " + (computerScore++));
+            roundResult.textContent = `You chose: ${userChoice}, the computer chose: ${computerChoice}. Rock beats scissors, you lost! The computer's score is ` + (computerScore++);
+            resultContainer.appendChild(roundResult);
         } else if (userChoice === "Scissors" && computerChoice === "Paper")
         {
-            return("Scissors beats paper, you won! Your score is " + (userScore++));
+            roundResult.textContent = `You chose: ${userChoice}, the computer chose: ${computerChoice}. Scissors beats paper, you won! Your score is ` + (userScore++);
+            resultContainer.appendChild(roundResult);
         } else if (userChoice === "Rock" && computerChoice === "Paper")
         {
-            return("Paper beats rock, you lost! The computer's score is " + (computerScore++));
+            roundResult.textContent = `You chose: ${userChoice}, the computer chose: ${computerChoice}. Paper beats rock, you lost! The computer's score is ` + (computerScore++);
+            resultContainer.appendChild(roundResult);
         } else if (userChoice === "Rock" && computerChoice === "Scissors")
         {
-            return("Rock beats scissors, you won! Your score is " + (userScore++));
+            roundResult.textContent = `You chose: ${userChoice}, the computer chose: ${computerChoice}. Rock beats scissors, you won! Your score is ` + (userScore++);
+            resultContainer.appendChild(roundResult);
         } else 
         {
-            return("You tied!");
+            roundResult.textContent = `You chose: ${userChoice}, the computer chose: ${computerChoice}. You tied!`;
+            resultContainer.appendChild(roundResult);
         }
     } else 
     {
@@ -107,4 +117,3 @@ Tasks:
     Display result of round (and round number)
     
     Display final result.*/
-
