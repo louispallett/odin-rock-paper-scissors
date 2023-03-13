@@ -9,6 +9,7 @@
 html, body
 {
     height: 100%;
+    margin: 0px;
 }
 
 .header
@@ -46,6 +47,8 @@ html, body
 {
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 24px;
+    padding: 20px;
+    
 }*/
 
 .main-body
@@ -81,21 +84,28 @@ html, body
 .scores-outer
 {
     display: flex;
-    height: 30%;
-    border-top: 3px solid white
+    height: auto;
+    border-top: 3px solid white;
+    font-size: 24px;
+    
 }
 
 .scores-inner
 {
     display: flex;
+    height: auto;
     flex-direction: column;
     font-family: 'FortySeven Micro NBP', sans-serif;
+    padding: 10px;
 }
 
-.comp-choice
+.final-result
 {
-    padding: 20px;
-    font-size: 24px;
+    display: flex;
+    height: auto;
+    flex-direction: column;
+    font-family: 'FortySeven Micro NBP', sans-serif;
+    color: white;
 }
 
 .footer

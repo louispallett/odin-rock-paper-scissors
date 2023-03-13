@@ -8,15 +8,18 @@ const paperButton = document.querySelector("#Paper");
 const scissorsButton = document.querySelector("#Scissors");
 
 //take in the user's choice
-rockButton.addEventListener('click', (e) => {
+rockButton.addEventListener('click', (e) => 
+{
     console.log(playRound(e.target.id, computerChoice));
 })
 
-paperButton.addEventListener('click', (e) => {
+paperButton.addEventListener('click', (e) => 
+{
     console.log(playRound(e.target.id, computerChoice));
 })
 
-scissorsButton.addEventListener('click', (e) => {
+scissorsButton.addEventListener('click', (e) => 
+{
     console.log(playRound(e.target.id, computerChoice));
 })
 
@@ -41,32 +44,22 @@ scissorsButton.addEventListener('click', (e) => {
                 return "Scissors";
             }
         }
+ 
 
-//calculate final result
-function finalResult()
-{
-    if(userScore > computerScore)
-    {
-        return("You scored a total of " + (userScore - 1) + ", whilst the computer scored a total of " + (computerScore - 1) + ". Well done - you won!");
-    } else if (userScore < computerScore)
-    {
-        return("You scored a total of " + (userScore - 1) + ", whilst the computer scored a total of " + (computerScore - 1) + ". Better luck next time!");
-    } else 
-    {
-        return("You scored a total of " + (userScore - 1) + ", whilst the computer scored a total of " + (computerScore - 1) + ". You tied! Care to refresh and try again?")
-    }
-}
 //set out rules: rock beats scissors, scissors beats paper, paper beats rock
 //test result based on player choice and computer's choice
 function playRound (userChoice, computerChoice)
 {
-    //Score DOM variables
-    const resultContainer = document.querySelector(".scores-inner");
-    const roundResult = document.createElement("div");
-
     computerChoice = (getComputerChoice());
+
+    const finalResultContainer = document.querySelector(".final-result");
+    const finalResultText = document.createElement("div");
+    
     if (userScore < 6 && computerScore < 6)
     {
+        //Score DOM variables
+        const resultContainer = document.querySelector(".scores-inner");
+        const roundResult = document.createElement("div");
         if (userChoice === "Paper" && computerChoice === "Rock")
         {
             roundResult.textContent = `You chose: ${userChoice}, the computer chose: ${computerChoice}. Paper beats rock, you won! Your score is ` + (userScore++);
@@ -98,12 +91,25 @@ function playRound (userChoice, computerChoice)
         }
     } else 
     {
-        return(finalResult());
+        finalResultText.setAttribute("style", "padding: 10px; font-size: 24px; font-weight: bold; border: 3px solid black; background-color: #0A23AA;")
+        if(userScore > computerScore)
+        {
+            finalResultText.textContent = "You scored a total of " + (userScore - 1) + ", whilst the computer scored a total of " + (computerScore - 1) + ". Well done - you won!";
+            finalResultContainer.appendChild(finalResultText);
+        } else if (userScore < computerScore)
+        {
+            finalResultText.textContent = "You scored a total of " + (userScore - 1) + ", whilst the computer scored a total of " + (computerScore - 1) + ". Better luck next time!";
+            finalResultContainer.appendChild(finalResultText);
+        } else 
+        {
+            finalResultText.textContent = "You scored a total of " + (userScore - 1) + ", whilst the computer scored a total of " + (computerScore - 1) + ". You tied! Care to refresh and try again?";
+            finalResultContainer.appendChild(finalResultText);
+        }
     }
 }
 
 //Return final result and verdict
-//console.log(finalResult());
+//console.log(getFinalResult());
 
 /* Creating the UI for the website:
 
