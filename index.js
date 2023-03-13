@@ -42,7 +42,21 @@ scissorsButton.addEventListener('click', (e) => {
                 return "Scissors";
             }
         }
-    
+
+//calculate final result
+function finalResult()
+{
+    if(userScore > computerScore)
+    {
+        return("You scored a total of " + (userScore - 1) + ", whilst the computer scored a total of " + (computerScore - 1) + ". Well done - you won!");
+    } else if (userScore < computerScore)
+    {
+        return("You scored a total of " + (userScore - 1) + ", whilst the computer scored a total of " + (computerScore - 1) + ". Better luck next time!");
+    } else 
+    {
+        return("You scored a total of " + (userScore - 1) + ", whilst the computer scored a total of " + (computerScore - 1) + ". You tied! Care to refresh and try again?")
+    }
+}
 //set out rules: rock beats scissors, scissors beats paper, paper beats rock
 //test result based on player choice and computer's choice
 function playRound (userChoice, computerChoice)
@@ -72,21 +86,9 @@ function playRound (userChoice, computerChoice)
         {
             return("You tied!");
         }
-    }
-}
-
-//calculate final result
-function finalResult()
-{
-    if(userScore > computerScore)
-    {
-        return("You scored a total of " + (userScore - 1) + ", whilst the computer scored a total of " + (computerScore - 1) + ". Well done - you won!");
-    } else if (userScore < computerScore)
-    {
-        return("You scored a total of " + (userScore - 1) + ", whilst the computer scored a total of " + (computerScore - 1) + ". Better luck next time!");
     } else 
     {
-        return("You scored a total of " + (userScore - 1) + ", whilst the computer scored a total of " + (computerScore - 1) + ". You tied! Care to refresh and try again?")
+        return(finalResult());
     }
 }
 
