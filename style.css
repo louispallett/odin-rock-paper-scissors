@@ -2,7 +2,6 @@
 @import url('https://fonts.cdnfonts.com/css/fortyseven-micro-nbp');
 *
 {
-    /*border: 1px solid red;*/
     margin: 0px;
 }
 
@@ -34,22 +33,6 @@ html, body
     gap: 20px;
     flex-wrap: wrap;
 }   
-
-/*.comp-choice-body
-{
-    display: flex;
-    justify-content: flex-start;
-    padding: 25px;
-    border-bottom: 3px solid white;
-}
-
-.comp-choice-text
-{
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 24px;
-    padding: 20px;
-    
-}*/
 
 .main-body
 {
